@@ -1,0 +1,6 @@
+・route53のAレコードにドメインとapplication load balancerインスタンスを指定。
+・application load balancerでAWS Certificate Managerの証明書を使い、https化する。
+・vpcのサブネットにはセキュリティグループとルートテーブルを設定する。
+・rdsはprivate subnetにしておく。
+・dockerでコンテナを作成して、githubでpull requestすると、
+    circleciでテスト、イメージのビルドとプッシュ、AWS CodeDeployでBlue/Greenデプロイメントが実行される。
